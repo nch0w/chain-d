@@ -9,30 +9,42 @@ import "./ConvertLib.sol";
 // token, see: https://github.com/ConsenSys/Tokens. Cheers!
 
 contract MetaCoin {
-    mapping(address => uint256) balances;
+    struct Profile {
+        string firstName;
+        string location;
+        uint256 birthdayYear;
+        string gender;
+        string orientation;
+        string school;
+        string bio;
+        string interests;
+        string photos;
+    }
 
-    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+    mapping(address => Profile) profiles;
+
+    // event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
     constructor() public {
-        balances[tx.origin] = 30000;
+        // balances[tx.origin] = 30000;
     }
 
-    function sendCoin(address receiver, uint256 amount)
-        public
-        returns (bool sufficient)
-    {
-        if (balances[msg.sender] < amount) return false;
-        balances[msg.sender] -= amount;
-        balances[receiver] += amount;
-        emit Transfer(msg.sender, receiver, amount);
-        return true;
-    }
+    // function sendCoin(address receiver, uint256 amount)
+    //     public
+    //     returns (bool sufficient)
+    // {
+    //     if (balances[msg.sender] < amount) return false;
+    //     balances[msg.sender] -= amount;
+    //     balances[receiver] += amount;
+    //     emit Transfer(msg.sender, receiver, amount);
+    //     return true;
+    // }
 
-    function getBalanceInEth(address addr) public view returns (uint256) {
-        return ConvertLib.convert(getBalance(addr), 2);
-    }
+    // function getBalanceInEth(address addr) public view returns (uint256) {
+    //     return ConvertLib.convert(getBalance(addr), 2);
+    // }
 
-    function getBalance(address addr) public view returns (uint256) {
-        return balances[addr];
-    }
+    // function getBalance(address addr) public view returns (uint256) {
+    //     return balances[addr];
+    // }
 }
