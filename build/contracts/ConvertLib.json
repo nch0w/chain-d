@@ -34,7 +34,7 @@
   "sourceMap": "66:155:0:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "66:155:0:-;;;;;;;;;;;;;;;;;;;;;;;;87:132;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;87:132:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;158:20;201:14;192:6;:23;185:30;;87:132;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.25 <0.7.0;\n\nlibrary ConvertLib{\n\tfunction convert(uint amount,uint conversionRate) public pure returns (uint convertedAmount)\n\t{\n\t\treturn amount * conversionRate;\n\t}\n}\n",
-  "sourcePath": "/home/neil/Programming/MetaCoin/contracts/ConvertLib.sol",
+  "sourcePath": "/home/neil/Programming/chain-d/contracts/ConvertLib.sol",
   "ast": {
     "absolutePath": "project:/contracts/ConvertLib.sol",
     "exportedSymbols": {
@@ -488,8 +488,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-08T14:04:54.386Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-11-08T14:38:17.593Z",
   "devdoc": {
     "methods": {}
   },

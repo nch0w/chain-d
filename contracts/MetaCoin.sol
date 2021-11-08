@@ -29,6 +29,30 @@ contract MetaCoin {
         // balances[tx.origin] = 30000;
     }
 
+    function createProfile(
+        string memory firstName,
+        string memory location,
+        uint256 birthdayYear,
+        string memory gender,
+        string memory orientation,
+        string memory school,
+        string memory bio,
+        string memory interests,
+        string memory photos
+    ) public {
+        profiles[msg.sender] = Profile(
+            firstName,
+            location,
+            birthdayYear,
+            gender,
+            orientation,
+            school,
+            bio,
+            interests,
+            photos
+        );
+    }
+
     // function sendCoin(address receiver, uint256 amount)
     //     public
     //     returns (bool sufficient)
