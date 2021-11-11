@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.25 <0.7.0;
+pragma solidity >=0.4.25;
 
 import "./ConvertLib.sol";
 
@@ -8,7 +8,7 @@ import "./ConvertLib.sol";
 // coin/token contracts. If you want to create a standards-compliant
 // token, see: https://github.com/ConsenSys/Tokens. Cheers!
 
-contract MetaCoin {
+contract Profiles {
     struct Profile {
         string firstName;
         string location;

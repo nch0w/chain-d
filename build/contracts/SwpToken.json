@@ -1,0 +1,116 @@
+{
+  "contractName": "SwpToken",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SwpToken.sol\":\"SwpToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SwpToken.sol\":{\"keccak256\":\"0xe236535bf158e36fb3e7e726eeec98d3c6d0dbba0e79fbb43a8d34e267dce253\",\"urls\":[\"bzz-raw://ae3b328212affab3f81497817f423f988509c28a8d4a0468a3fd6d90ab6b352b\",\"dweb:/ipfs/QmbSNtV236RY5LTQQ7UrovTXWTR4yqGzCJtNkUSALpfcFC\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820f979cfb87450901313cf2adf6e38745ae95d51a44c9fa5f04c2aabf443d19a0d64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820f979cfb87450901313cf2adf6e38745ae95d51a44c9fa5f04c2aabf443d19a0d64736f6c63430005100032",
+  "sourceMap": "27:20:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:20:3;;;;;;;",
+  "deployedSourceMap": "27:20:3:-;;;;;",
+  "source": "pragma solidity >=0.4.25;\n\ncontract SwpToken {}\n",
+  "sourcePath": "/home/neil/Programming/chain-d/contracts/SwpToken.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/SwpToken.sol",
+    "exportedSymbols": {
+      "SwpToken": [
+        91
+      ]
+    },
+    "id": 92,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 90,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 91,
+        "linearizedBaseContracts": [
+          91
+        ],
+        "name": "SwpToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 92,
+        "src": "27:20:3"
+      }
+    ],
+    "src": "0:48:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/SwpToken.sol",
+      "exportedSymbols": {
+        "SwpToken": [
+          91
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".25"
+          ]
+        },
+        "id": 90,
+        "name": "PragmaDirective",
+        "src": "0:25:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            91
+          ],
+          "name": "SwpToken",
+          "nodes": [
+            null
+          ],
+          "scope": 92
+        },
+        "id": 91,
+        "name": "ContractDefinition",
+        "src": "27:20:3"
+      }
+    ],
+    "id": 92,
+    "name": "SourceUnit",
+    "src": "0:48:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-11T16:30:06.125Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
