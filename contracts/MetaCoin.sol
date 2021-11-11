@@ -15,42 +15,30 @@ contract MetaCoin {
         uint256 birthdayYear;
         string gender;
         string orientation;
-        string school;
-        string bio;
-        string interests;
-        string photos;
     }
 
-    mapping(address => Profile) profiles;
+    mapping(address => Profile) public profiles;
 
-    // event Transfer(address indexed _from, address indexed _to, uint256 _value);
-
-    constructor() public {
-        // balances[tx.origin] = 30000;
-    }
+    constructor() public {}
 
     function createProfile(
         string memory firstName,
         string memory location,
         uint256 birthdayYear,
         string memory gender,
-        string memory orientation,
-        string memory school,
-        string memory bio,
-        string memory interests,
-        string memory photos
+        string memory orientation
     ) public {
         profiles[msg.sender] = Profile(
             firstName,
             location,
             birthdayYear,
             gender,
-            orientation,
-            school,
-            bio,
-            interests,
-            photos
+            orientation
         );
+    }
+
+    function getName(address addr) public view returns (string memory) {
+        return profiles[addr].firstName;
     }
 
     // function sendCoin(address receiver, uint256 amount)
