@@ -26,6 +26,7 @@ const App = {
       this.account = accounts[0];
       const accountText = document.getElementById("account");
       accountText.innerHTML = "Your address: " + this.account;
+      await this.setNumberOfSwipes();
     } catch (error) {
       console.error(error);
     }
@@ -56,13 +57,25 @@ const App = {
     const amount = parseInt(document.getElementById("amount").value);
     const receiver = document.getElementById("receiver").value;
     const { addSwipe } = this.swipes.methods;
-    await addSwipe(receiver).send({ from: this.account });
+    await addSwipe(this.web3.utils.asciiToHex("hello")).send({
+      from: this.account,
+      value: this.web3.utils.toWei("1", "ether"),
+    });
     console.log(amount, receiver);
+    await this.setNumberOfSwipes();
   },
 
   setStatus: function (message) {
     const status = document.getElementById("status");
     status.innerHTML = message;
+  },
+
+  setNumberOfSwipes: async function () {
+    const { getNumSwipes } = this.swipes.methods;
+    const numberOfSwipes = await getNumSwipes(this.account).call();
+    console.log(numberOfSwipes);
+    const numberOfSwipesElement = document.getElementById("swipeCounter");
+    numberOfSwipesElement.innerHTML = numberOfSwipes;
   },
 };
 
