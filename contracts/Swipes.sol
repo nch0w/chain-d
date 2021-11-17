@@ -1,6 +1,6 @@
 pragma solidity >=0.4.25;
 
-contract Matching {
+contract Swipes {
     struct Swipe {
         bytes encryptedAddress;
         uint256 timestamp;
@@ -9,15 +9,18 @@ contract Matching {
 
     mapping(address => Swipe[]) public swipes;
 
-    constructor() public payable {}
+    constructor() public {}
 
-    function() external payable {
+    function addSwipe(bytes memory encryptedMatch) public payable {
         if (msg.value >= 1000000000) {
-            bytes memory matchAddress = msg.data;
             swipes[msg.sender].push(
-                Swipe(matchAddress, block.timestamp, msg.value)
+                Swipe(encryptedMatch, block.timestamp, msg.value)
             );
         }
+    }
+
+    function getNumSwipes(address _address) public view returns (uint256) {
+        return swipes[_address].length;
     }
 
     function getBalance() public view returns (uint256) {
