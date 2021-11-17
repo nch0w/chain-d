@@ -59,7 +59,7 @@ const App = {
     const { addSwipe } = this.swipes.methods;
     await addSwipe(this.web3.utils.asciiToHex("hello")).send({
       from: this.account,
-      value: this.web3.utils.toWei("1", "ether"),
+      value: this.web3.utils.toWei(`${amount}`, "ether"),
     });
     console.log(amount, receiver);
     await this.setNumberOfSwipes();
