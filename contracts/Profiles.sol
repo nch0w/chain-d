@@ -54,13 +54,7 @@ contract Profiles {
         datingAccounts.push(account.addr);
     }
 
-    function getAccounts() public view returns (address[] memory){
-        return datingAccounts;
-    }
-
-    function getAccount(address acct) public view returns (string memory, string memory, uint256, string memory, string memory){
-        return (profiles[acct].firstName, profiles[acct].location, profiles[acct].birthdayYear, profiles[acct].gender, profiles[acct].orientation);
-    }
+    
     
     
     function makeMatches(address addr, uint256 age, string memory gender, string memory orientation) public{
@@ -72,11 +66,22 @@ contract Profiles {
         }
         
     }
+
+    // returns the address array of matches that has been mapped to the given address
     function getMatches(address addr) public view returns(address[] memory){
         return matches[addr];
     }
     
-    // using address
+    // gets all accounts/addresses on the network
+    function getAccounts() public view returns (address[] memory){
+        return datingAccounts;
+    }
+    // gets all stored information of given account/address
+    function getAccount(address acct) public view returns (string memory, string memory, uint256, string memory, string memory){
+        return (profiles[acct].firstName, profiles[acct].location, profiles[acct].birthdayYear, profiles[acct].gender, profiles[acct].orientation);
+    }
+
+    // getter functions using address
     function getName(address addr) public view returns (string memory) {
        return profiles[addr].firstName;
     }
@@ -97,7 +102,9 @@ contract Profiles {
     function getOrientation(address addr) public view returns (string memory) {
         return profiles[addr].orientation;
     }
-    // using index
+
+
+    // getter functions using index
    function getName(uint256 index) public view returns (string memory) {
         return profiles[datingAccounts[index]].firstName;
     }
@@ -119,6 +126,11 @@ contract Profiles {
         return profiles[datingAccounts[index]].orientation;
     }
     
+
+
+
+// simple functions to do with comparing variables
+
 
 function compareStrings(string memory a, string memory b) public pure returns (bool) {
     return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
