@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.25;
 
-import "./ConvertLib.sol";
 
 
 
@@ -21,11 +20,10 @@ contract Profiles {
     }
     
     address[] public datingAccounts;
-    address[] public matches;
-
 
     mapping(address => Profile) public profiles;
-
+    mapping(address => address[]) public matches;
+    
     constructor() public {}
 
     function createProfile(
@@ -40,6 +38,21 @@ contract Profiles {
         profiles[msg.sender] = account;
         datingAccounts.push(account.addr);
     }
+    
+    
+    function createProfile2(
+        address user,
+        string memory firstName,
+        string memory location,
+        uint256 birthdayYear,
+        string memory gender,
+        string memory orientation
+
+    ) public {
+        Profile memory account = Profile(user, firstName, location, birthdayYear, gender, orientation);
+        profiles[user] = account;
+        datingAccounts.push(account.addr);
+    }
 
     function getAccounts() public view returns (address[] memory){
         return datingAccounts;
@@ -48,21 +61,21 @@ contract Profiles {
     function getAccount(address acct) public view returns (string memory, string memory, uint256, string memory, string memory){
         return (profiles[acct].firstName, profiles[acct].location, profiles[acct].birthdayYear, profiles[acct].gender, profiles[acct].orientation);
     }
-
-    function makeMatches(uint256 age, string memory gender, string memory orientation) public view returns(address[] memory){
-        address[] memory mtchs;
-        uint index = 0;
-        for(uint i = 0; i < datingAccounts.length-1;i++){
+    
+    
+    function makeMatches(address addr, uint256 age, string memory gender, string memory orientation) public{
+        for(uint i = 0;i < datingAccounts.length; i++){
             if(getAge(datingAccounts[i]) == age && compareStrings(getGender(datingAccounts[i]), gender) && compareStrings(getOrientation(datingAccounts[i]), orientation))
             {
-                mtchs[index] = datingAccounts[i];
-                index++;
+                matches[addr].push(datingAccounts[i]);
             }
-
         }
-    return mtchs;
-
+        
     }
+    function getMatches(address addr) public view returns(address[] memory){
+        return matches[addr];
+    }
+    
     // using address
     function getName(address addr) public view returns (string memory) {
        return profiles[addr].firstName;
@@ -110,22 +123,5 @@ contract Profiles {
 function compareStrings(string memory a, string memory b) public pure returns (bool) {
     return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
 }
-    // function sendCoin(address receiver, uint256 amount)
-    //     public
-    //     returns (bool sufficient)
-    // {
-    //     if (balances[msg.sender] < amount) return false;
-    //     balances[msg.sender] -= amount;
-    //     balances[receiver] += amount;
-    //     emit Transfer(msg.sender, receiver, amount);
-    //     return true;
-    // }
-
-    // function getBalanceInEth(address addr) public view returns (uint256) {
-    //     return ConvertLib.convert(getBalance(addr), 2);
-    // }
-
-    // function getBalance(address addr) public view returns (uint256) {
-    //     return balances[addr];
-    // }
+   
 }
