@@ -23,6 +23,19 @@ contract Swipes {
         return swipes[_address].length;
     }
 
+    function getSwipe(address _address, uint256 index)
+        public
+        view
+        returns (
+            bytes memory,
+            uint256,
+            uint256
+        )
+    {
+        Swipe storage swipe = swipes[_address][index];
+        return (swipe.encryptedAddress, swipe.timestamp, swipe.fee);
+    }
+
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }

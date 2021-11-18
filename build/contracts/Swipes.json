@@ -81,6 +81,42 @@
     },
     {
       "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSwipe",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [],
       "name": "getBalance",
       "outputs": [
@@ -95,25 +131,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"encryptedMatch\",\"type\":\"bytes\"}],\"name\":\"addSwipe\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getNumSwipes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"swipes\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"encryptedAddress\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Swipes.sol\":\"Swipes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Swipes.sol\":{\"keccak256\":\"0xcf5dd3fefc12bb3cc6f3de1cef932cd6de6656224f61feb8c67d3b2e8505e6d6\",\"urls\":[\"bzz-raw://e6fde58076035ac3acc8dea76f1a234430e1e9f06afaea1428f292a7ac91f297\",\"dweb:/ipfs/QmZs8vnQ82c8P1rU64GSdeQCr9ZNJ1sFHcUUnSMXrxTQmU\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610439806100206000396000f3fe60806040526004361061003f5760003560e01c806312065fe0146100445780631e6e2caf1461006b5780636b563adb1461012a578063d07fcbf61461015d575b600080fd5b34801561005057600080fd5b50610059610205565b60408051918252519081900360200190f35b34801561007757600080fd5b506100a46004803603604081101561008e57600080fd5b506001600160a01b03813516906020013561020a565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156100ed5781810151838201526020016100d5565b50505050905090810190601f16801561011a5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561013657600080fd5b506100596004803603602081101561014d57600080fd5b50356001600160a01b03166102d2565b6102036004803603602081101561017357600080fd5b81019060208101813564010000000081111561018e57600080fd5b8201836020820111156101a057600080fd5b803590602001918460018302840111640100000000831117156101c257600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102ed945050505050565b005b475b90565b6000602052816000526040600020818154811061022357fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919450925083918301828280156102bc5780601f10610291576101008083540402835291602001916102bc565b820191906000526020600020905b81548152906001019060200180831161029f57829003601f168201915b5050505050908060010154908060020154905083565b6001600160a01b031660009081526020819052604090205490565b633b9aca00341061036957336000908152602081815260408083208151606081018352858152428185015234928101929092528054600181018083559185529383902082518051929593946003909402909101926103509284929091019061036c565b5060208201518160010155604082015181600201555050505b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103ad57805160ff19168380011785556103da565b828001600101855582156103da579182015b828111156103da5782518255916020019190600101906103bf565b506103e69291506103ea565b5090565b61020791905b808211156103e657600081556001016103f056fea265627a7a72315820ed281a599afb10ea9765af97ad3eaefb51ecd451039c4c600f667252181e7f9564736f6c63430005100032",
-  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806312065fe0146100445780631e6e2caf1461006b5780636b563adb1461012a578063d07fcbf61461015d575b600080fd5b34801561005057600080fd5b50610059610205565b60408051918252519081900360200190f35b34801561007757600080fd5b506100a46004803603604081101561008e57600080fd5b506001600160a01b03813516906020013561020a565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156100ed5781810151838201526020016100d5565b50505050905090810190601f16801561011a5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561013657600080fd5b506100596004803603602081101561014d57600080fd5b50356001600160a01b03166102d2565b6102036004803603602081101561017357600080fd5b81019060208101813564010000000081111561018e57600080fd5b8201836020820111156101a057600080fd5b803590602001918460018302840111640100000000831117156101c257600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102ed945050505050565b005b475b90565b6000602052816000526040600020818154811061022357fe5b60009182526020918290206003919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919450925083918301828280156102bc5780601f10610291576101008083540402835291602001916102bc565b820191906000526020600020905b81548152906001019060200180831161029f57829003601f168201915b5050505050908060010154908060020154905083565b6001600160a01b031660009081526020819052604090205490565b633b9aca00341061036957336000908152602081815260408083208151606081018352858152428185015234928101929092528054600181018083559185529383902082518051929593946003909402909101926103509284929091019061036c565b5060208201518160010155604082015181600201555050505b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103ad57805160ff19168380011785556103da565b828001600101855582156103da579182015b828111156103da5782518255916020019190600101906103bf565b506103e69291506103ea565b5090565b61020791905b808211156103e657600081556001016103f056fea265627a7a72315820ed281a599afb10ea9765af97ad3eaefb51ecd451039c4c600f667252181e7f9564736f6c63430005100032",
-  "sourceMap": "27:669:3:-;;;203:23;8:9:-1;5:2;;;30:1;27;20:12;5:2;203:23:3;27:669;;;;;;",
-  "deployedSourceMap": "27:669:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;597:97;;8:9:-1;5:2;;;30:1;27;20:12;5:2;597:97:3;;;:::i;:::-;;;;;;;;;;;;;;;;155:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:41:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;155:41:3;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;155:41:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:117;;8:9:-1;5:2;;;30:1;27;20:12;5:2;474:117:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;474:117:3;-1:-1:-1;;;;;474:117:3;;:::i;232:236::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;232:236:3;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;232:236:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;232:236:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;232:236:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;232:236:3;;-1:-1:-1;232:236:3;;-1:-1:-1;;;;;232:236:3:i;:::-;;597:97;666:21;597:97;;:::o;155:41::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;155:41:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;155:41:3;-1:-1:-1;155:41:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;474:117::-;-1:-1:-1;;;;;561:16:3;535:7;561:16;;;;;;;;;;:23;;474:117::o;232:236::-;321:10;308:9;:23;304:158;;354:10;347:6;:18;;;;;;;;;;;388:49;;;;;;;;;;410:15;388:49;;;;427:9;388:49;;;;;;;27:10:-1;;39:1;23:18;;45:23;;;347:104:3;;;;;;;;;;;23:18:-1;;388:49:3;;347:104;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;304:158;232:236;:::o;27:669::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;27:669:3;;;-1:-1:-1;27:669:3;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;",
-  "source": "pragma solidity >=0.4.25;\n\ncontract Swipes {\n    struct Swipe {\n        bytes encryptedAddress;\n        uint256 timestamp;\n        uint256 fee;\n    }\n\n    mapping(address => Swipe[]) public swipes;\n\n    constructor() public {}\n\n    function addSwipe(bytes memory encryptedMatch) public payable {\n        if (msg.value >= 1000000000) {\n            swipes[msg.sender].push(\n                Swipe(encryptedMatch, block.timestamp, msg.value)\n            );\n        }\n    }\n\n    function getNumSwipes(address _address) public view returns (uint256) {\n        return swipes[_address].length;\n    }\n\n    function getBalance() public view returns (uint256) {\n        return address(this).balance;\n    }\n}\n",
-  "sourcePath": "/Users/andreaslorgen/Documents/GitHub/chain-d/contracts/Swipes.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"encryptedMatch\",\"type\":\"bytes\"}],\"name\":\"addSwipe\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getNumSwipes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getSwipe\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"swipes\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"encryptedAddress\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Swipes.sol\":\"Swipes\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Swipes.sol\":{\"keccak256\":\"0x2623afd4b7de4010e32cb7825be482f7983620cfc0d7bde51eaf25c7d7f35e56\",\"urls\":[\"bzz-raw://8c84755b302a1aa49ed1d115ea387addafe2278f6123ba374c1c2cf2c2cb4713\",\"dweb:/ipfs/QmZZA3Kxa1VbH512RnLmvUoPSQA2xmjJWnQLTPtE5n9PBR\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610746806100206000396000f3fe60806040526004361061004a5760003560e01c806312065fe01461004f5780631e6e2caf1461007a57806365d06e741461015c5780636b563adb1461023e578063d07fcbf6146102a3575b600080fd5b34801561005b57600080fd5b5061006461035e565b6040518082815260200191505060405180910390f35b34801561008657600080fd5b506100d36004803603604081101561009d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610366565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b8381101561011f578082015181840152602081019050610104565b50505050905090810190601f16801561014c5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561016857600080fd5b506101b56004803603604081101561017f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610442565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156102015780820151818401526020810190506101e6565b50505050905090810190601f16801561022e5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561024a57600080fd5b5061028d6004803603602081101561026157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061055a565b6040518082815260200191505060405180910390f35b61035c600480360360208110156102b957600080fd5b81019080803590602001906401000000008111156102d657600080fd5b8201836020820111156102e857600080fd5b8035906020019184600183028401116401000000008311171561030a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506105a5565b005b600047905090565b6000602052816000526040600020818154811061037f57fe5b906000526020600020906003020160009150915050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561042c5780601f106104015761010080835404028352916020019161042c565b820191906000526020600020905b81548152906001019060200180831161040f57829003601f168201915b5050505050908060010154908060020154905083565b606060008060008060008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020858154811061049257fe5b906000526020600020906003020190508060000181600101548260020154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105455780601f1061051a57610100808354040283529160200191610545565b820191906000526020600020905b81548152906001019060200180831161052857829003601f168201915b50505050509250935093509350509250925092565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020805490509050919050565b633b9aca003410610669576000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060405180606001604052808381526020014281526020013481525090806001815401808255809150509060018203906000526020600020906003020160009091929091909150600082015181600001908051906020019061065092919061066c565b5060208201518160010155604082015181600201555050505b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106ad57805160ff19168380011785556106db565b828001600101855582156106db579182015b828111156106da5782518255916020019190600101906106bf565b5b5090506106e891906106ec565b5090565b61070e91905b8082111561070a5760008160009055506001016106f2565b5090565b9056fea265627a7a723158202d72c01a3791c48f128e4b94d7459101760c7c55bdb3edb72e28f1d07fb678e364736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061004a5760003560e01c806312065fe01461004f5780631e6e2caf1461007a57806365d06e741461015c5780636b563adb1461023e578063d07fcbf6146102a3575b600080fd5b34801561005b57600080fd5b5061006461035e565b6040518082815260200191505060405180910390f35b34801561008657600080fd5b506100d36004803603604081101561009d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610366565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b8381101561011f578082015181840152602081019050610104565b50505050905090810190601f16801561014c5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561016857600080fd5b506101b56004803603604081101561017f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610442565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156102015780820151818401526020810190506101e6565b50505050905090810190601f16801561022e5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561024a57600080fd5b5061028d6004803603602081101561026157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061055a565b6040518082815260200191505060405180910390f35b61035c600480360360208110156102b957600080fd5b81019080803590602001906401000000008111156102d657600080fd5b8201836020820111156102e857600080fd5b8035906020019184600183028401116401000000008311171561030a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506105a5565b005b600047905090565b6000602052816000526040600020818154811061037f57fe5b906000526020600020906003020160009150915050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561042c5780601f106104015761010080835404028352916020019161042c565b820191906000526020600020905b81548152906001019060200180831161040f57829003601f168201915b5050505050908060010154908060020154905083565b606060008060008060008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020858154811061049257fe5b906000526020600020906003020190508060000181600101548260020154828054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105455780601f1061051a57610100808354040283529160200191610545565b820191906000526020600020905b81548152906001019060200180831161052857829003601f168201915b50505050509250935093509350509250925092565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020805490509050919050565b633b9aca003410610669576000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060405180606001604052808381526020014281526020013481525090806001815401808255809150509060018203906000526020600020906003020160009091929091909150600082015181600001908051906020019061065092919061066c565b5060208201518160010155604082015181600201555050505b50565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106ad57805160ff19168380011785556106db565b828001600101855582156106db579182015b828111156106da5782518255916020019190600101906106bf565b5b5090506106e891906106ec565b5090565b61070e91905b8082111561070a5760008160009055506001016106f2565b5090565b9056fea265627a7a723158202d72c01a3791c48f128e4b94d7459101760c7c55bdb3edb72e28f1d07fb678e364736f6c63430005100032",
+  "sourceMap": "27:984:0:-;;;203:23;8:9:-1;5:2;;;30:1;27;20:12;5:2;203:23:0;27:984;;;;;;",
+  "deployedSourceMap": "27:984:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;912:97;;8:9:-1;5:2;;;30:1;27;20:12;5:2;912:97:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;155:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:41:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;155:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;155:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;597:309;;8:9:-1;5:2;;;30:1;27;20:12;5:2;597:309:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;597:309:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;597:309:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:117;;8:9:-1;5:2;;;30:1;27;20:12;5:2;474:117:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;474:117:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;232:236;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;232:236:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;232:236:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;232:236:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;232:236:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;232:236:0;;;;;;;;;;;;;;;:::i;:::-;;912:97;955:7;981:21;974:28;;912:97;:::o;155:41::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;597:309::-;706:12;732:7;753;785:19;807:6;:16;814:8;807:16;;;;;;;;;;;;;;;824:5;807:23;;;;;;;;;;;;;;;;;;785:45;;848:5;:22;;872:5;:15;;;889:5;:9;;;840:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;597:309;;;;;:::o;474:117::-;535:7;561:6;:16;568:8;561:16;;;;;;;;;;;;;;;:23;;;;554:30;;474:117;;;:::o;232:236::-;321:10;308:9;:23;304:158;;347:6;:18;354:10;347:18;;;;;;;;;;;;;;;388:49;;;;;;;;394:14;388:49;;;;410:15;388:49;;;;427:9;388:49;;;347:104;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;347:104:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;304:158;232:236;:::o;27:984::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.25;\n\ncontract Swipes {\n    struct Swipe {\n        bytes encryptedAddress;\n        uint256 timestamp;\n        uint256 fee;\n    }\n\n    mapping(address => Swipe[]) public swipes;\n\n    constructor() public {}\n\n    function addSwipe(bytes memory encryptedMatch) public payable {\n        if (msg.value >= 1000000000) {\n            swipes[msg.sender].push(\n                Swipe(encryptedMatch, block.timestamp, msg.value)\n            );\n        }\n    }\n\n    function getNumSwipes(address _address) public view returns (uint256) {\n        return swipes[_address].length;\n    }\n\n    function getSwipe(address _address, uint256 index)\n        public\n        view\n        returns (\n            bytes memory,\n            uint256,\n            uint256\n        )\n    {\n        Swipe storage swipe = swipes[_address][index];\n        return (swipe.encryptedAddress, swipe.timestamp, swipe.fee);\n    }\n\n    function getBalance() public view returns (uint256) {\n        return address(this).balance;\n    }\n}\n",
+  "sourcePath": "/home/neil/Programming/chain-d/contracts/Swipes.sol",
   "ast": {
     "absolutePath": "project:/contracts/Swipes.sol",
     "exportedSymbols": {
       "Swipes": [
-        498
+        98
       ]
     },
-    "id": 499,
+    "id": 99,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 431,
+        "id": 1,
         "literals": [
           "solidity",
           ">=",
@@ -121,7 +157,7 @@
           ".25"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:25:3"
+        "src": "0:25:0"
       },
       {
         "baseContracts": [],
@@ -129,24 +165,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 498,
+        "id": 98,
         "linearizedBaseContracts": [
-          498
+          98
         ],
         "name": "Swipes",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Swipes.Swipe",
-            "id": 438,
+            "id": 8,
             "members": [
               {
                 "constant": false,
-                "id": 433,
+                "id": 3,
                 "name": "encryptedAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 438,
-                "src": "72:22:3",
+                "scope": 8,
+                "src": "72:22:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -154,10 +190,10 @@
                   "typeString": "bytes"
                 },
                 "typeName": {
-                  "id": 432,
+                  "id": 2,
                   "name": "bytes",
                   "nodeType": "ElementaryTypeName",
-                  "src": "72:5:3",
+                  "src": "72:5:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes_storage_ptr",
                     "typeString": "bytes"
@@ -168,11 +204,11 @@
               },
               {
                 "constant": false,
-                "id": 435,
+                "id": 5,
                 "name": "timestamp",
                 "nodeType": "VariableDeclaration",
-                "scope": 438,
-                "src": "104:17:3",
+                "scope": 8,
+                "src": "104:17:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -180,10 +216,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 434,
+                  "id": 4,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "104:7:3",
+                  "src": "104:7:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -194,11 +230,11 @@
               },
               {
                 "constant": false,
-                "id": 437,
+                "id": 7,
                 "name": "fee",
                 "nodeType": "VariableDeclaration",
-                "scope": 438,
-                "src": "131:11:3",
+                "scope": 8,
+                "src": "131:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -206,10 +242,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 436,
+                  "id": 6,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "131:7:3",
+                  "src": "131:7:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -221,60 +257,60 @@
             ],
             "name": "Swipe",
             "nodeType": "StructDefinition",
-            "scope": 498,
-            "src": "49:100:3",
+            "scope": 98,
+            "src": "49:100:0",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 443,
+            "id": 13,
             "name": "swipes",
             "nodeType": "VariableDeclaration",
-            "scope": 498,
-            "src": "155:41:3",
+            "scope": 98,
+            "src": "155:41:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$438_storage_$dyn_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_$",
               "typeString": "mapping(address => struct Swipes.Swipe[])"
             },
             "typeName": {
-              "id": 442,
+              "id": 12,
               "keyType": {
-                "id": 439,
+                "id": 9,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "163:7:3",
+                "src": "163:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "155:27:3",
+              "src": "155:27:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$438_storage_$dyn_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_$",
                 "typeString": "mapping(address => struct Swipes.Swipe[])"
               },
               "valueType": {
                 "baseType": {
                   "contractScope": null,
-                  "id": 440,
+                  "id": 10,
                   "name": "Swipe",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 438,
-                  "src": "174:5:3",
+                  "referencedDeclaration": 8,
+                  "src": "174:5:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Swipe_$438_storage_ptr",
+                    "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
                     "typeString": "struct Swipes.Swipe"
                   }
                 },
-                "id": 441,
+                "id": 11,
                 "length": null,
                 "nodeType": "ArrayTypeName",
-                "src": "174:7:3",
+                "src": "174:7:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_struct$_Swipe_$438_storage_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_ptr",
                   "typeString": "struct Swipes.Swipe[]"
                 }
               }
@@ -284,41 +320,41 @@
           },
           {
             "body": {
-              "id": 446,
+              "id": 16,
               "nodeType": "Block",
-              "src": "224:2:3",
+              "src": "224:2:0",
               "statements": []
             },
             "documentation": null,
-            "id": 447,
+            "id": 17,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 444,
+              "id": 14,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "214:2:3"
+              "src": "214:2:0"
             },
             "returnParameters": {
-              "id": 445,
+              "id": 15,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "224:0:3"
+              "src": "224:0:0"
             },
-            "scope": 498,
-            "src": "203:23:3",
+            "scope": 98,
+            "src": "203:23:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 472,
+              "id": 42,
               "nodeType": "Block",
-              "src": "294:174:3",
+              "src": "294:174:0",
               "statements": [
                 {
                   "condition": {
@@ -327,7 +363,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 455,
+                    "id": 25,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -336,18 +372,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 452,
+                        "id": 22,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 513,
-                        "src": "308:3:3",
+                        "referencedDeclaration": 113,
+                        "src": "308:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 453,
+                      "id": 23,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -355,7 +391,7 @@
                       "memberName": "value",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "308:9:3",
+                      "src": "308:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -366,14 +402,14 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "31303030303030303030",
-                      "id": 454,
+                      "id": 24,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "321:10:3",
+                      "src": "321:10:0",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_1000000000_by_1",
@@ -381,20 +417,20 @@
                       },
                       "value": "1000000000"
                     },
-                    "src": "308:23:3",
+                    "src": "308:23:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 471,
+                  "id": 41,
                   "nodeType": "IfStatement",
-                  "src": "304:158:3",
+                  "src": "304:158:0",
                   "trueBody": {
-                    "id": 470,
+                    "id": 40,
                     "nodeType": "Block",
-                    "src": "333:129:3",
+                    "src": "333:129:0",
                     "statements": [
                       {
                         "expression": {
@@ -405,12 +441,12 @@
                               "arguments": [
                                 {
                                   "argumentTypes": null,
-                                  "id": 462,
+                                  "id": 32,
                                   "name": "encryptedMatch",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 449,
-                                  "src": "394:14:3",
+                                  "referencedDeclaration": 19,
+                                  "src": "394:14:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes_memory_ptr",
                                     "typeString": "bytes memory"
@@ -420,18 +456,18 @@
                                   "argumentTypes": null,
                                   "expression": {
                                     "argumentTypes": null,
-                                    "id": 463,
+                                    "id": 33,
                                     "name": "block",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 503,
-                                    "src": "410:5:3",
+                                    "referencedDeclaration": 103,
+                                    "src": "410:5:0",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_magic_block",
                                       "typeString": "block"
                                     }
                                   },
-                                  "id": 464,
+                                  "id": 34,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -439,7 +475,7 @@
                                   "memberName": "timestamp",
                                   "nodeType": "MemberAccess",
                                   "referencedDeclaration": null,
-                                  "src": "410:15:3",
+                                  "src": "410:15:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -449,18 +485,18 @@
                                   "argumentTypes": null,
                                   "expression": {
                                     "argumentTypes": null,
-                                    "id": 465,
+                                    "id": 35,
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 513,
-                                    "src": "427:3:3",
+                                    "referencedDeclaration": 113,
+                                    "src": "427:3:0",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_magic_message",
                                       "typeString": "msg"
                                     }
                                   },
-                                  "id": 466,
+                                  "id": 36,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -468,7 +504,7 @@
                                   "memberName": "value",
                                   "nodeType": "MemberAccess",
                                   "referencedDeclaration": null,
-                                  "src": "427:9:3",
+                                  "src": "427:9:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -490,18 +526,18 @@
                                     "typeString": "uint256"
                                   }
                                 ],
-                                "id": 461,
+                                "id": 31,
                                 "name": "Swipe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 438,
-                                "src": "388:5:3",
+                                "referencedDeclaration": 8,
+                                "src": "388:5:0",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_type$_t_struct$_Swipe_$438_storage_ptr_$",
+                                  "typeIdentifier": "t_type$_t_struct$_Swipe_$8_storage_ptr_$",
                                   "typeString": "type(struct Swipes.Swipe storage pointer)"
                                 }
                               },
-                              "id": 467,
+                              "id": 37,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -509,9 +545,9 @@
                               "lValueRequested": false,
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "388:49:3",
+                              "src": "388:49:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Swipe_$438_memory",
+                                "typeIdentifier": "t_struct$_Swipe_$8_memory",
                                 "typeString": "struct Swipes.Swipe memory"
                               }
                             }
@@ -519,7 +555,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_Swipe_$438_memory",
+                                "typeIdentifier": "t_struct$_Swipe_$8_memory",
                                 "typeString": "struct Swipes.Swipe memory"
                               }
                             ],
@@ -527,34 +563,34 @@
                               "argumentTypes": null,
                               "baseExpression": {
                                 "argumentTypes": null,
-                                "id": 456,
+                                "id": 26,
                                 "name": "swipes",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 443,
-                                "src": "347:6:3",
+                                "referencedDeclaration": 13,
+                                "src": "347:6:0",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$438_storage_$dyn_storage_$",
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_$",
                                   "typeString": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)"
                                 }
                               },
-                              "id": 459,
+                              "id": 29,
                               "indexExpression": {
                                 "argumentTypes": null,
                                 "expression": {
                                   "argumentTypes": null,
-                                  "id": 457,
+                                  "id": 27,
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 513,
-                                  "src": "354:3:3",
+                                  "referencedDeclaration": 113,
+                                  "src": "354:3:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
                                     "typeString": "msg"
                                   }
                                 },
-                                "id": 458,
+                                "id": 28,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -562,7 +598,7 @@
                                 "memberName": "sender",
                                 "nodeType": "MemberAccess",
                                 "referencedDeclaration": null,
-                                "src": "354:10:3",
+                                "src": "354:10:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address_payable",
                                   "typeString": "address payable"
@@ -573,13 +609,13 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "IndexAccess",
-                              "src": "347:18:3",
+                              "src": "347:18:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_Swipe_$438_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_Swipe_$8_storage_$dyn_storage",
                                 "typeString": "struct Swipes.Swipe storage ref[] storage ref"
                               }
                             },
-                            "id": 460,
+                            "id": 30,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -587,13 +623,13 @@
                             "memberName": "push",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "347:23:3",
+                            "src": "347:23:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Swipe_$438_storage_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Swipe_$8_storage_$returns$_t_uint256_$",
                               "typeString": "function (struct Swipes.Swipe storage ref) returns (uint256)"
                             }
                           },
-                          "id": 468,
+                          "id": 38,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -601,15 +637,15 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "347:104:3",
+                          "src": "347:104:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 469,
+                        "id": 39,
                         "nodeType": "ExpressionStatement",
-                        "src": "347:104:3"
+                        "src": "347:104:0"
                       }
                     ]
                   }
@@ -617,23 +653,23 @@
               ]
             },
             "documentation": null,
-            "id": 473,
+            "id": 43,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "addSwipe",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 450,
+              "id": 20,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 449,
+                  "id": 19,
                   "name": "encryptedMatch",
                   "nodeType": "VariableDeclaration",
-                  "scope": 473,
-                  "src": "250:27:3",
+                  "scope": 43,
+                  "src": "250:27:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -641,10 +677,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 448,
+                    "id": 18,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "250:5:3",
+                    "src": "250:5:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -654,25 +690,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "249:29:3"
+              "src": "249:29:0"
             },
             "returnParameters": {
-              "id": 451,
+              "id": 21,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "294:0:3"
+              "src": "294:0:0"
             },
-            "scope": 498,
-            "src": "232:236:3",
+            "scope": 98,
+            "src": "232:236:0",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 485,
+              "id": 55,
               "nodeType": "Block",
-              "src": "544:47:3",
+              "src": "544:47:0",
               "statements": [
                 {
                   "expression": {
@@ -681,26 +717,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 480,
+                        "id": 50,
                         "name": "swipes",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 443,
-                        "src": "561:6:3",
+                        "referencedDeclaration": 13,
+                        "src": "561:6:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$438_storage_$dyn_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_$",
                           "typeString": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)"
                         }
                       },
-                      "id": 482,
+                      "id": 52,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 481,
+                        "id": 51,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 475,
-                        "src": "568:8:3",
+                        "referencedDeclaration": 45,
+                        "src": "568:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -711,13 +747,13 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "561:16:3",
+                      "src": "561:16:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_Swipe_$438_storage_$dyn_storage",
+                        "typeIdentifier": "t_array$_t_struct$_Swipe_$8_storage_$dyn_storage",
                         "typeString": "struct Swipes.Swipe storage ref[] storage ref"
                       }
                     },
-                    "id": 483,
+                    "id": 53,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -725,37 +761,37 @@
                     "memberName": "length",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "561:23:3",
+                    "src": "561:23:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 479,
-                  "id": 484,
+                  "functionReturnParameters": 49,
+                  "id": 54,
                   "nodeType": "Return",
-                  "src": "554:30:3"
+                  "src": "554:30:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 486,
+            "id": 56,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getNumSwipes",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 476,
+              "id": 46,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 475,
+                  "id": 45,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 486,
-                  "src": "496:16:3",
+                  "scope": 56,
+                  "src": "496:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -763,10 +799,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 474,
+                    "id": 44,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "496:7:3",
+                    "src": "496:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -777,19 +813,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "495:18:3"
+              "src": "495:18:0"
             },
             "returnParameters": {
-              "id": 479,
+              "id": 49,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 478,
+                  "id": 48,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 486,
-                  "src": "535:7:3",
+                  "scope": 56,
+                  "src": "535:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -797,10 +833,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 477,
+                    "id": 47,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "535:7:3",
+                    "src": "535:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -810,19 +846,400 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "534:9:3"
+              "src": "534:9:0"
             },
-            "scope": 498,
-            "src": "474:117:3",
+            "scope": 98,
+            "src": "474:117:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 496,
+              "id": 85,
               "nodeType": "Block",
-              "src": "649:45:3",
+              "src": "775:131:0",
+              "statements": [
+                {
+                  "assignments": [
+                    70
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 70,
+                      "name": "swipe",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 85,
+                      "src": "785:19:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
+                        "typeString": "struct Swipes.Swipe"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 69,
+                        "name": "Swipe",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8,
+                        "src": "785:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
+                          "typeString": "struct Swipes.Swipe"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 76,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 71,
+                        "name": "swipes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "807:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_struct$_Swipe_$8_storage_$dyn_storage_$",
+                          "typeString": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)"
+                        }
+                      },
+                      "id": 73,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 72,
+                        "name": "_address",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 58,
+                        "src": "814:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "807:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Swipe_$8_storage_$dyn_storage",
+                        "typeString": "struct Swipes.Swipe storage ref[] storage ref"
+                      }
+                    },
+                    "id": 75,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 74,
+                      "name": "index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 60,
+                      "src": "824:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "807:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Swipe_$8_storage",
+                      "typeString": "struct Swipes.Swipe storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "785:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 77,
+                          "name": "swipe",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "848:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
+                            "typeString": "struct Swipes.Swipe storage pointer"
+                          }
+                        },
+                        "id": 78,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "encryptedAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3,
+                        "src": "848:22:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_storage",
+                          "typeString": "bytes storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 79,
+                          "name": "swipe",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "872:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
+                            "typeString": "struct Swipes.Swipe storage pointer"
+                          }
+                        },
+                        "id": 80,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5,
+                        "src": "872:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 81,
+                          "name": "swipe",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 70,
+                          "src": "889:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Swipe_$8_storage_ptr",
+                            "typeString": "struct Swipes.Swipe storage pointer"
+                          }
+                        },
+                        "id": 82,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "fee",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7,
+                        "src": "889:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 83,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "847:52:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bytes_storage_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(bytes storage ref,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 68,
+                  "id": 84,
+                  "nodeType": "Return",
+                  "src": "840:59:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 86,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSwipe",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 58,
+                  "name": "_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "615:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 60,
+                  "name": "index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "633:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "633:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:33:0"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 63,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "706:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "706:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 65,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "732:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "732:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 67,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "753:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 66,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "692:78:0"
+            },
+            "scope": 98,
+            "src": "597:309:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 96,
+              "nodeType": "Block",
+              "src": "964:45:0",
               "statements": [
                 {
                   "expression": {
@@ -832,14 +1249,14 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 492,
+                          "id": 92,
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 533,
-                          "src": "674:4:3",
+                          "referencedDeclaration": 127,
+                          "src": "989:4:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Swipes_$498",
+                            "typeIdentifier": "t_contract$_Swipes_$98",
                             "typeString": "contract Swipes"
                           }
                         }
@@ -847,24 +1264,24 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_contract$_Swipes_$498",
+                            "typeIdentifier": "t_contract$_Swipes_$98",
                             "typeString": "contract Swipes"
                           }
                         ],
-                        "id": 491,
+                        "id": 91,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "666:7:3",
+                        "src": "981:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_address_$",
                           "typeString": "type(address)"
                         },
                         "typeName": "address"
                       },
-                      "id": 493,
+                      "id": 93,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -872,13 +1289,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "666:13:3",
+                      "src": "981:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 494,
+                    "id": 94,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -886,43 +1303,43 @@
                     "memberName": "balance",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "666:21:3",
+                    "src": "981:21:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 490,
-                  "id": 495,
+                  "functionReturnParameters": 90,
+                  "id": 95,
                   "nodeType": "Return",
-                  "src": "659:28:3"
+                  "src": "974:28:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 497,
+            "id": 97,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getBalance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 487,
+              "id": 87,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "616:2:3"
+              "src": "931:2:0"
             },
             "returnParameters": {
-              "id": 490,
+              "id": 90,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 489,
+                  "id": 89,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 497,
-                  "src": "640:7:3",
+                  "scope": 97,
+                  "src": "955:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -930,10 +1347,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 488,
+                    "id": 88,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "640:7:3",
+                    "src": "955:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -943,27 +1360,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "639:9:3"
+              "src": "954:9:0"
             },
-            "scope": 498,
-            "src": "597:97:3",
+            "scope": 98,
+            "src": "912:97:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 499,
-        "src": "27:669:3"
+        "scope": 99,
+        "src": "27:984:0"
       }
     ],
-    "src": "0:697:3"
+    "src": "0:1012:0"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/Swipes.sol",
       "exportedSymbols": {
         "Swipes": [
-          498
+          98
         ]
       }
     },
@@ -977,9 +1394,9 @@
             ".25"
           ]
         },
-        "id": 431,
+        "id": 1,
         "name": "PragmaDirective",
-        "src": "0:25:3"
+        "src": "0:25:0"
       },
       {
         "attributes": {
@@ -993,17 +1410,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            498
+            98
           ],
           "name": "Swipes",
-          "scope": 499
+          "scope": 99
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "Swipes.Swipe",
               "name": "Swipe",
-              "scope": 498,
+              "scope": 98,
               "visibility": "public"
             },
             "children": [
@@ -1011,7 +1428,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "encryptedAddress",
-                  "scope": 438,
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bytes",
@@ -1024,20 +1441,20 @@
                       "name": "bytes",
                       "type": "bytes"
                     },
-                    "id": 432,
+                    "id": 2,
                     "name": "ElementaryTypeName",
-                    "src": "72:5:3"
+                    "src": "72:5:0"
                   }
                 ],
-                "id": 433,
+                "id": 3,
                 "name": "VariableDeclaration",
-                "src": "72:22:3"
+                "src": "72:22:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "timestamp",
-                  "scope": 438,
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1050,20 +1467,20 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 434,
+                    "id": 4,
                     "name": "ElementaryTypeName",
-                    "src": "104:7:3"
+                    "src": "104:7:0"
                   }
                 ],
-                "id": 435,
+                "id": 5,
                 "name": "VariableDeclaration",
-                "src": "104:17:3"
+                "src": "104:17:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "fee",
-                  "scope": 438,
+                  "scope": 8,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -1076,25 +1493,25 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 436,
+                    "id": 6,
                     "name": "ElementaryTypeName",
-                    "src": "131:7:3"
+                    "src": "131:7:0"
                   }
                 ],
-                "id": 437,
+                "id": 7,
                 "name": "VariableDeclaration",
-                "src": "131:11:3"
+                "src": "131:11:0"
               }
             ],
-            "id": 438,
+            "id": 8,
             "name": "StructDefinition",
-            "src": "49:100:3"
+            "src": "49:100:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "swipes",
-              "scope": 498,
+              "scope": 98,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => struct Swipes.Swipe[])",
@@ -1112,9 +1529,9 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 439,
+                    "id": 9,
                     "name": "ElementaryTypeName",
-                    "src": "163:7:3"
+                    "src": "163:7:0"
                   },
                   {
                     "attributes": {
@@ -1126,27 +1543,27 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Swipe",
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 8,
                           "type": "struct Swipes.Swipe"
                         },
-                        "id": 440,
+                        "id": 10,
                         "name": "UserDefinedTypeName",
-                        "src": "174:5:3"
+                        "src": "174:5:0"
                       }
                     ],
-                    "id": 441,
+                    "id": 11,
                     "name": "ArrayTypeName",
-                    "src": "174:7:3"
+                    "src": "174:7:0"
                   }
                 ],
-                "id": 442,
+                "id": 12,
                 "name": "Mapping",
-                "src": "155:27:3"
+                "src": "155:27:0"
               }
             ],
-            "id": 443,
+            "id": 13,
             "name": "VariableDeclaration",
-            "src": "155:41:3"
+            "src": "155:41:0"
           },
           {
             "attributes": {
@@ -1158,7 +1575,7 @@
                 null
               ],
               "name": "",
-              "scope": 498,
+              "scope": 98,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -1171,9 +1588,9 @@
                   ]
                 },
                 "children": [],
-                "id": 444,
+                "id": 14,
                 "name": "ParameterList",
-                "src": "214:2:3"
+                "src": "214:2:0"
               },
               {
                 "attributes": {
@@ -1182,9 +1599,9 @@
                   ]
                 },
                 "children": [],
-                "id": 445,
+                "id": 15,
                 "name": "ParameterList",
-                "src": "224:0:3"
+                "src": "224:0:0"
               },
               {
                 "attributes": {
@@ -1193,14 +1610,14 @@
                   ]
                 },
                 "children": [],
-                "id": 446,
+                "id": 16,
                 "name": "Block",
-                "src": "224:2:3"
+                "src": "224:2:0"
               }
             ],
-            "id": 447,
+            "id": 17,
             "name": "FunctionDefinition",
-            "src": "203:23:3"
+            "src": "203:23:0"
           },
           {
             "attributes": {
@@ -1212,7 +1629,7 @@
                 null
               ],
               "name": "addSwipe",
-              "scope": 498,
+              "scope": 98,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
@@ -1224,7 +1641,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "encryptedMatch",
-                      "scope": 473,
+                      "scope": 43,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "bytes",
@@ -1237,19 +1654,19 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 448,
+                        "id": 18,
                         "name": "ElementaryTypeName",
-                        "src": "250:5:3"
+                        "src": "250:5:0"
                       }
                     ],
-                    "id": 449,
+                    "id": 19,
                     "name": "VariableDeclaration",
-                    "src": "250:27:3"
+                    "src": "250:27:0"
                   }
                 ],
-                "id": 450,
+                "id": 20,
                 "name": "ParameterList",
-                "src": "249:29:3"
+                "src": "249:29:0"
               },
               {
                 "attributes": {
@@ -1258,9 +1675,9 @@
                   ]
                 },
                 "children": [],
-                "id": 451,
+                "id": 21,
                 "name": "ParameterList",
-                "src": "294:0:3"
+                "src": "294:0:0"
               },
               {
                 "children": [
@@ -1302,18 +1719,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 513,
+                                  "referencedDeclaration": 113,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 452,
+                                "id": 22,
                                 "name": "Identifier",
-                                "src": "308:3:3"
+                                "src": "308:3:0"
                               }
                             ],
-                            "id": 453,
+                            "id": 23,
                             "name": "MemberAccess",
-                            "src": "308:9:3"
+                            "src": "308:9:0"
                           },
                           {
                             "attributes": {
@@ -1328,14 +1745,14 @@
                               "type": "int_const 1000000000",
                               "value": "1000000000"
                             },
-                            "id": 454,
+                            "id": 24,
                             "name": "Literal",
-                            "src": "321:10:3"
+                            "src": "321:10:0"
                           }
                         ],
-                        "id": 455,
+                        "id": 25,
                         "name": "BinaryOperation",
-                        "src": "308:23:3"
+                        "src": "308:23:0"
                       },
                       {
                         "children": [
@@ -1360,7 +1777,7 @@
                                     "attributes": {
                                       "argumentTypes": [
                                         {
-                                          "typeIdentifier": "t_struct$_Swipe_$438_memory",
+                                          "typeIdentifier": "t_struct$_Swipe_$8_memory",
                                           "typeString": "struct Swipes.Swipe memory"
                                         }
                                       ],
@@ -1389,13 +1806,13 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 443,
+                                              "referencedDeclaration": 13,
                                               "type": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)",
                                               "value": "swipes"
                                             },
-                                            "id": 456,
+                                            "id": 26,
                                             "name": "Identifier",
-                                            "src": "347:6:3"
+                                            "src": "347:6:0"
                                           },
                                           {
                                             "attributes": {
@@ -1415,28 +1832,28 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 513,
+                                                  "referencedDeclaration": 113,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
-                                                "id": 457,
+                                                "id": 27,
                                                 "name": "Identifier",
-                                                "src": "354:3:3"
+                                                "src": "354:3:0"
                                               }
                                             ],
-                                            "id": 458,
+                                            "id": 28,
                                             "name": "MemberAccess",
-                                            "src": "354:10:3"
+                                            "src": "354:10:0"
                                           }
                                         ],
-                                        "id": 459,
+                                        "id": 29,
                                         "name": "IndexAccess",
-                                        "src": "347:18:3"
+                                        "src": "347:18:0"
                                       }
                                     ],
-                                    "id": 460,
+                                    "id": 30,
                                     "name": "MemberAccess",
-                                    "src": "347:23:3"
+                                    "src": "347:23:0"
                                   },
                                   {
                                     "attributes": {
@@ -1472,13 +1889,13 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 438,
+                                          "referencedDeclaration": 8,
                                           "type": "type(struct Swipes.Swipe storage pointer)",
                                           "value": "Swipe"
                                         },
-                                        "id": 461,
+                                        "id": 31,
                                         "name": "Identifier",
-                                        "src": "388:5:3"
+                                        "src": "388:5:0"
                                       },
                                       {
                                         "attributes": {
@@ -1486,13 +1903,13 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 449,
+                                          "referencedDeclaration": 19,
                                           "type": "bytes memory",
                                           "value": "encryptedMatch"
                                         },
-                                        "id": 462,
+                                        "id": 32,
                                         "name": "Identifier",
-                                        "src": "394:14:3"
+                                        "src": "394:14:0"
                                       },
                                       {
                                         "attributes": {
@@ -1512,18 +1929,18 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 503,
+                                              "referencedDeclaration": 103,
                                               "type": "block",
                                               "value": "block"
                                             },
-                                            "id": 463,
+                                            "id": 33,
                                             "name": "Identifier",
-                                            "src": "410:5:3"
+                                            "src": "410:5:0"
                                           }
                                         ],
-                                        "id": 464,
+                                        "id": 34,
                                         "name": "MemberAccess",
-                                        "src": "410:15:3"
+                                        "src": "410:15:0"
                                       },
                                       {
                                         "attributes": {
@@ -1543,53 +1960,53 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 513,
+                                              "referencedDeclaration": 113,
                                               "type": "msg",
                                               "value": "msg"
                                             },
-                                            "id": 465,
+                                            "id": 35,
                                             "name": "Identifier",
-                                            "src": "427:3:3"
+                                            "src": "427:3:0"
                                           }
                                         ],
-                                        "id": 466,
+                                        "id": 36,
                                         "name": "MemberAccess",
-                                        "src": "427:9:3"
+                                        "src": "427:9:0"
                                       }
                                     ],
-                                    "id": 467,
+                                    "id": 37,
                                     "name": "FunctionCall",
-                                    "src": "388:49:3"
+                                    "src": "388:49:0"
                                   }
                                 ],
-                                "id": 468,
+                                "id": 38,
                                 "name": "FunctionCall",
-                                "src": "347:104:3"
+                                "src": "347:104:0"
                               }
                             ],
-                            "id": 469,
+                            "id": 39,
                             "name": "ExpressionStatement",
-                            "src": "347:104:3"
+                            "src": "347:104:0"
                           }
                         ],
-                        "id": 470,
+                        "id": 40,
                         "name": "Block",
-                        "src": "333:129:3"
+                        "src": "333:129:0"
                       }
                     ],
-                    "id": 471,
+                    "id": 41,
                     "name": "IfStatement",
-                    "src": "304:158:3"
+                    "src": "304:158:0"
                   }
                 ],
-                "id": 472,
+                "id": 42,
                 "name": "Block",
-                "src": "294:174:3"
+                "src": "294:174:0"
               }
             ],
-            "id": 473,
+            "id": 43,
             "name": "FunctionDefinition",
-            "src": "232:236:3"
+            "src": "232:236:0"
           },
           {
             "attributes": {
@@ -1601,7 +2018,7 @@
                 null
               ],
               "name": "getNumSwipes",
-              "scope": 498,
+              "scope": 98,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -1613,7 +2030,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_address",
-                      "scope": 486,
+                      "scope": 56,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1627,19 +2044,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 474,
+                        "id": 44,
                         "name": "ElementaryTypeName",
-                        "src": "496:7:3"
+                        "src": "496:7:0"
                       }
                     ],
-                    "id": 475,
+                    "id": 45,
                     "name": "VariableDeclaration",
-                    "src": "496:16:3"
+                    "src": "496:16:0"
                   }
                 ],
-                "id": 476,
+                "id": 46,
                 "name": "ParameterList",
-                "src": "495:18:3"
+                "src": "495:18:0"
               },
               {
                 "children": [
@@ -1647,7 +2064,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 486,
+                      "scope": 56,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1660,25 +2077,25 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 477,
+                        "id": 47,
                         "name": "ElementaryTypeName",
-                        "src": "535:7:3"
+                        "src": "535:7:0"
                       }
                     ],
-                    "id": 478,
+                    "id": 48,
                     "name": "VariableDeclaration",
-                    "src": "535:7:3"
+                    "src": "535:7:0"
                   }
                 ],
-                "id": 479,
+                "id": 49,
                 "name": "ParameterList",
-                "src": "534:9:3"
+                "src": "534:9:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 479
+                      "functionReturnParameters": 49
                     },
                     "children": [
                       {
@@ -1709,13 +2126,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 443,
+                                  "referencedDeclaration": 13,
                                   "type": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)",
                                   "value": "swipes"
                                 },
-                                "id": 480,
+                                "id": 50,
                                 "name": "Identifier",
-                                "src": "561:6:3"
+                                "src": "561:6:0"
                               },
                               {
                                 "attributes": {
@@ -1723,38 +2140,38 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 475,
+                                  "referencedDeclaration": 45,
                                   "type": "address",
                                   "value": "_address"
                                 },
-                                "id": 481,
+                                "id": 51,
                                 "name": "Identifier",
-                                "src": "568:8:3"
+                                "src": "568:8:0"
                               }
                             ],
-                            "id": 482,
+                            "id": 52,
                             "name": "IndexAccess",
-                            "src": "561:16:3"
+                            "src": "561:16:0"
                           }
                         ],
-                        "id": 483,
+                        "id": 53,
                         "name": "MemberAccess",
-                        "src": "561:23:3"
+                        "src": "561:23:0"
                       }
                     ],
-                    "id": 484,
+                    "id": 54,
                     "name": "Return",
-                    "src": "554:30:3"
+                    "src": "554:30:0"
                   }
                 ],
-                "id": 485,
+                "id": 55,
                 "name": "Block",
-                "src": "544:47:3"
+                "src": "544:47:0"
               }
             ],
-            "id": 486,
+            "id": 56,
             "name": "FunctionDefinition",
-            "src": "474:117:3"
+            "src": "474:117:0"
           },
           {
             "attributes": {
@@ -1765,31 +2182,47 @@
               "modifiers": [
                 null
               ],
-              "name": "getBalance",
-              "scope": 498,
+              "name": "getSwipe",
+              "scope": 98,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 487,
-                "name": "ParameterList",
-                "src": "616:2:3"
-              },
-              {
                 "children": [
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "",
-                      "scope": 497,
+                      "name": "_address",
+                      "scope": 86,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 57,
+                        "name": "ElementaryTypeName",
+                        "src": "615:7:0"
+                      }
+                    ],
+                    "id": 58,
+                    "name": "VariableDeclaration",
+                    "src": "615:16:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "index",
+                      "scope": 86,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1802,25 +2235,413 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 488,
+                        "id": 59,
                         "name": "ElementaryTypeName",
-                        "src": "640:7:3"
+                        "src": "633:7:0"
                       }
                     ],
-                    "id": 489,
+                    "id": 60,
                     "name": "VariableDeclaration",
-                    "src": "640:7:3"
+                    "src": "633:13:0"
                   }
                 ],
-                "id": 490,
+                "id": 61,
                 "name": "ParameterList",
-                "src": "639:9:3"
+                "src": "614:33:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 490
+                      "constant": false,
+                      "name": "",
+                      "scope": 86,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 62,
+                        "name": "ElementaryTypeName",
+                        "src": "706:5:0"
+                      }
+                    ],
+                    "id": 63,
+                    "name": "VariableDeclaration",
+                    "src": "706:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 86,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 64,
+                        "name": "ElementaryTypeName",
+                        "src": "732:7:0"
+                      }
+                    ],
+                    "id": 65,
+                    "name": "VariableDeclaration",
+                    "src": "732:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 86,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 66,
+                        "name": "ElementaryTypeName",
+                        "src": "753:7:0"
+                      }
+                    ],
+                    "id": 67,
+                    "name": "VariableDeclaration",
+                    "src": "753:7:0"
+                  }
+                ],
+                "id": 68,
+                "name": "ParameterList",
+                "src": "692:78:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        70
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "swipe",
+                          "scope": 85,
+                          "stateVariable": false,
+                          "storageLocation": "storage",
+                          "type": "struct Swipes.Swipe",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Swipe",
+                              "referencedDeclaration": 8,
+                              "type": "struct Swipes.Swipe"
+                            },
+                            "id": 69,
+                            "name": "UserDefinedTypeName",
+                            "src": "785:5:0"
+                          }
+                        ],
+                        "id": 70,
+                        "name": "VariableDeclaration",
+                        "src": "785:19:0"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct Swipes.Swipe storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct Swipes.Swipe storage ref[] storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 13,
+                                  "type": "mapping(address => struct Swipes.Swipe storage ref[] storage ref)",
+                                  "value": "swipes"
+                                },
+                                "id": 71,
+                                "name": "Identifier",
+                                "src": "807:6:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 58,
+                                  "type": "address",
+                                  "value": "_address"
+                                },
+                                "id": 72,
+                                "name": "Identifier",
+                                "src": "814:8:0"
+                              }
+                            ],
+                            "id": 73,
+                            "name": "IndexAccess",
+                            "src": "807:16:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 60,
+                              "type": "uint256",
+                              "value": "index"
+                            },
+                            "id": 74,
+                            "name": "Identifier",
+                            "src": "824:5:0"
+                          }
+                        ],
+                        "id": 75,
+                        "name": "IndexAccess",
+                        "src": "807:23:0"
+                      }
+                    ],
+                    "id": 76,
+                    "name": "VariableDeclarationStatement",
+                    "src": "785:45:0"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 68
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(bytes storage ref,uint256,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "encryptedAddress",
+                              "referencedDeclaration": 3,
+                              "type": "bytes storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 70,
+                                  "type": "struct Swipes.Swipe storage pointer",
+                                  "value": "swipe"
+                                },
+                                "id": 77,
+                                "name": "Identifier",
+                                "src": "848:5:0"
+                              }
+                            ],
+                            "id": 78,
+                            "name": "MemberAccess",
+                            "src": "848:22:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": 5,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 70,
+                                  "type": "struct Swipes.Swipe storage pointer",
+                                  "value": "swipe"
+                                },
+                                "id": 79,
+                                "name": "Identifier",
+                                "src": "872:5:0"
+                              }
+                            ],
+                            "id": 80,
+                            "name": "MemberAccess",
+                            "src": "872:15:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "fee",
+                              "referencedDeclaration": 7,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 70,
+                                  "type": "struct Swipes.Swipe storage pointer",
+                                  "value": "swipe"
+                                },
+                                "id": 81,
+                                "name": "Identifier",
+                                "src": "889:5:0"
+                              }
+                            ],
+                            "id": 82,
+                            "name": "MemberAccess",
+                            "src": "889:9:0"
+                          }
+                        ],
+                        "id": 83,
+                        "name": "TupleExpression",
+                        "src": "847:52:0"
+                      }
+                    ],
+                    "id": 84,
+                    "name": "Return",
+                    "src": "840:59:0"
+                  }
+                ],
+                "id": 85,
+                "name": "Block",
+                "src": "775:131:0"
+              }
+            ],
+            "id": 86,
+            "name": "FunctionDefinition",
+            "src": "597:309:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getBalance",
+              "scope": 98,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 87,
+                "name": "ParameterList",
+                "src": "931:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 97,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 88,
+                        "name": "ElementaryTypeName",
+                        "src": "955:7:0"
+                      }
+                    ],
+                    "id": 89,
+                    "name": "VariableDeclaration",
+                    "src": "955:7:0"
+                  }
+                ],
+                "id": 90,
+                "name": "ParameterList",
+                "src": "954:9:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 90
                     },
                     "children": [
                       {
@@ -1854,7 +2675,7 @@
                                 "attributes": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_contract$_Swipes_$498",
+                                      "typeIdentifier": "t_contract$_Swipes_$98",
                                       "typeString": "contract Swipes"
                                     }
                                   ],
@@ -1865,9 +2686,9 @@
                                   "type": "type(address)",
                                   "value": "address"
                                 },
-                                "id": 491,
+                                "id": 91,
                                 "name": "ElementaryTypeNameExpression",
-                                "src": "666:7:3"
+                                "src": "981:7:0"
                               },
                               {
                                 "attributes": {
@@ -1875,48 +2696,48 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 533,
+                                  "referencedDeclaration": 127,
                                   "type": "contract Swipes",
                                   "value": "this"
                                 },
-                                "id": 492,
+                                "id": 92,
                                 "name": "Identifier",
-                                "src": "674:4:3"
+                                "src": "989:4:0"
                               }
                             ],
-                            "id": 493,
+                            "id": 93,
                             "name": "FunctionCall",
-                            "src": "666:13:3"
+                            "src": "981:13:0"
                           }
                         ],
-                        "id": 494,
+                        "id": 94,
                         "name": "MemberAccess",
-                        "src": "666:21:3"
+                        "src": "981:21:0"
                       }
                     ],
-                    "id": 495,
+                    "id": 95,
                     "name": "Return",
-                    "src": "659:28:3"
+                    "src": "974:28:0"
                   }
                 ],
-                "id": 496,
+                "id": 96,
                 "name": "Block",
-                "src": "649:45:3"
+                "src": "964:45:0"
               }
             ],
-            "id": 497,
+            "id": 97,
             "name": "FunctionDefinition",
-            "src": "597:97:3"
+            "src": "912:97:0"
           }
         ],
-        "id": 498,
+        "id": 98,
         "name": "ContractDefinition",
-        "src": "27:669:3"
+        "src": "27:984:0"
       }
     ],
-    "id": 499,
+    "id": 99,
     "name": "SourceUnit",
-    "src": "0:697:3"
+    "src": "0:1012:0"
   },
   "compiler": {
     "name": "solc",
@@ -1926,12 +2747,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x87e19451EabaFF0cbb69Cb99019E19de64ec3b09",
-      "transactionHash": "0xb230f66be12f783d1a451a9fbefc137db6bac069876f83552524197dfa0f7121"
+      "address": "0xF52b5D670fB603D7f0DAaf98FADE5F0BB2d4B016",
+      "transactionHash": "0xd320279a6f889865835605863ec8d0f3bbb2ce5da3df406b954de88690863f2d"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T00:08:30.527Z",
+  "updatedAt": "2021-11-17T18:03:24.051Z",
   "devdoc": {
     "methods": {}
   },
