@@ -8,6 +8,7 @@ const App = {
   web3: null,
   account: null,
   swipes: null,
+  profiles: null,
 
   start: async function () {
     const { web3 } = this;
@@ -16,12 +17,16 @@ const App = {
       // get contract instance
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = swipesArtifact.networks[networkId];
+
       this.swipes = new web3.eth.Contract(
         swipesArtifact.abi,
         deployedNetwork.address
       );
 
-      console.log(this.swipes.methods);
+      this.profiles = new web3.eth.Contract(
+        profileArtifact.abi,
+        deployedNetwork.address
+      );
 
       // get accounts
       const accounts = await web3.eth.getAccounts();
@@ -33,27 +38,6 @@ const App = {
       console.error(error);
     }
   },
-
-  // refreshBalance: async function () {
-  //   const { getBalance } = this.swipes.methods;
-  //   const balance = await getBalance(this.account).call();
-
-  //   const balanceElement = document.getElementsByClassName("balance")[0];
-  //   balanceElement.innerHTML = balance;
-  // },
-
-  // sendCoin: async function () {
-  //   const amount = parseInt(document.getElementById("amount").value);
-  //   const receiver = document.getElementById("receiver").value;
-
-  //   this.setStatus("Initiating transaction... (please wait)");
-
-  //   const { sendCoin } = this.meta.methods;
-  //   await sendCoin(receiver, amount).send({ from: this.account });
-
-  //   this.setStatus("Transaction complete!");
-  //   this.refreshBalance();
-  // },
 
   swipe: async function () {
     // const amount = parseInt(document.getElementById("amount").value);

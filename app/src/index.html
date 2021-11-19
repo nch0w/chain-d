@@ -21,6 +21,65 @@
   <body>
     <h1>Chain'd</h1>
     <p id="account"></p>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      View/Update Profile
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="profile-first-name" class="col-form-label">First Name:</label>
+                <input type="text" class="form-control" id="profile-first-name" placeholder="e.g. Bob">
+              </div>
+              <div class="mb-3">
+                <label for="profile-location" class="col-form-label">Location:</label>
+                <input type="text" class="form-control" id="profile-location" placeholder="e.g. Exeter, NH">
+              </div>
+              <div class="mb-3">
+                <label for="profile-location" class="col-form-label">Birthday Year:</label>
+                <input type="text" class="form-control" id="profile-location" placeholder="e.g. 2003">
+              </div>
+              <div class="mb-3">
+                <label for="profile-gender" class="col-form-label">Gender:</label>
+                <select class="form-select" id="profile-gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="profile-gender" class="col-form-label">Sexual Orientation:</label>
+                <select class="form-select" id="profile-gender">
+                  <option value="Male">Straight</option>
+                  <option value="Female">Gay/Lesbian</option>
+                  <option value="Other">Bisexual/Pansexual</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="profile-bio" class="form-label">Bio</label>
+                <textarea class="form-control" id="profile-bio" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <h2>Swipe</h2>
 
     <!-- <label for="amount">ETH amount:</label>
@@ -30,16 +89,17 @@
     <input
       type="text"
       id="receiver"
+      class="form-control"
       placeholder="e.g. 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"
     />
 
-    <button type="button" class="btn btn-primary" onclick="App.swipe()">Swipe</button>
+    <button type="button" class="btn btn-secondary" onclick="App.swipe()">Swipe</button>
     <p id="swipeCounter"></p> 
     <p id="status"></p>
     <script src="index.js"></script>
 
     <h2>All Swipes</h2>
-    <button type="button" class="btn btn-dark" onclick="App.scan()">Scan</button>
+    <button type="button" class="btn btn-secondary" onclick="App.scan()">Scan</button>
     <div id="scanData"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
