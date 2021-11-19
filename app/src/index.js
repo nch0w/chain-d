@@ -85,7 +85,7 @@ const App = {
 
     const scanElement = document.getElementById("scanData");
     scanElement.innerHTML = `
-      <table>
+      <table class="table table-striped">
         <tr>
           <th>Address</th>
           <th>Swipes</th>
