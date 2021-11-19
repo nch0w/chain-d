@@ -46,8 +46,8 @@
                 <input type="text" class="form-control" id="profile-location" placeholder="e.g. Exeter, NH">
               </div>
               <div class="mb-3">
-                <label for="profile-location" class="col-form-label">Birthday Year:</label>
-                <input type="text" class="form-control" id="profile-location" placeholder="e.g. 2003">
+                <label for="profile-birthday-year" class="col-form-label">Birthday Year:</label>
+                <input type="text" class="form-control" id="profile-birthday-year" placeholder="e.g. 2003">
               </div>
               <div class="mb-3">
                 <label for="profile-gender" class="col-form-label">Gender:</label>
@@ -58,8 +58,8 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="profile-gender" class="col-form-label">Sexual Orientation:</label>
-                <select class="form-select" id="profile-gender">
+                <label for="profile-orientation" class="col-form-label">Sexual Orientation:</label>
+                <select class="form-select" id="profile-orientation">
                   <option value="Male">Straight</option>
                   <option value="Female">Gay/Lesbian</option>
                   <option value="Other">Bisexual/Pansexual</option>
@@ -73,7 +73,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" onclick="App.saveProfile()">Save changes</button>
           </div>
         </div>
       </div>

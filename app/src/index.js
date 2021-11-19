@@ -34,6 +34,7 @@ const App = {
       const accountText = document.getElementById("account");
       accountText.innerHTML = "Your address: " + this.account;
       await this.scan();
+      await this.loadProfile(this.account);
     } catch (error) {
       console.error(error);
     }
@@ -109,13 +110,30 @@ const App = {
     status.innerHTML = message;
   },
 
-  // setNumberOfSwipes: async function () {
-  //   const { getNumSwipes } = this.swipes.methods;
-  //   const numberOfSwipes = await getNumSwipes(this.account).call();
-  //   console.log(numberOfSwipes);
-  //   const numberOfSwipesElement = document.getElementById("swipeCounter");
-  //   numberOfSwipesElement.innerHTML = numberOfSwipes;
-  // },
+  saveProfile: async function () {
+    const { createProfile } = this.profiles.methods;
+    const firstName = document.getElementById("profile-first-name").value;
+    const location = document.getElementById("profile-location").value;
+    const birthdayYear = parseInt(
+      document.getElementById("profile-birthday-year").value
+    );
+    const gender = document.getElementById("profile-gender").value;
+    const orientation = document.getElementById("profile-orientation").value;
+    console.log(firstName, location, birthdayYear, gender, orientation);
+    await createProfile(
+      firstName,
+      location,
+      birthdayYear,
+      gender,
+      orientation
+    ).call();
+  },
+
+  loadProfile: async function (_address) {
+    const { getAccount } = this.profiles.methods;
+    const account = await getAccount(_address).call();
+    console.log(account);
+  },
 };
 
 window.App = App;
