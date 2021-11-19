@@ -1,3 +1,5 @@
+// Pre-generated code
+
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 

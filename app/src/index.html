@@ -2,11 +2,17 @@
 <html>
   <head>
     <title>Chain'd</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <style>
     input {
       display: block;
       margin-bottom: 12px;
+    }
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 2px;
     }
   </style>
   <body>
@@ -14,8 +20,8 @@
     <p id="account"></p>
     <h2>Swipe</h2>
 
-    <label for="amount">ETH amount:</label>
-    <input type="text" id="amount" placeholder="e.g. 95" />
+    <!-- <label for="amount">ETH amount:</label>
+    <input type="text" id="amount" placeholder="Min 1 ETH" /> -->
 
     <label for="receiver">Address:</label>
     <input
@@ -28,5 +34,9 @@
     <p id="swipeCounter"></p> 
     <p id="status"></p>
     <script src="index.js"></script>
+
+    <h2>All Swipes</h2>
+    <button onclick="App.scan()">Scan</button>
+    <div id="scanData"></div>
   </body>
 </html>
