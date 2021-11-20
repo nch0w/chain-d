@@ -10,6 +10,10 @@ const App = {
   swipes: null,
   profiles: null,
 
+  data: {
+    myAccount: null,
+  },
+
   start: async function () {
     const { web3 } = this;
 
@@ -33,7 +37,7 @@ const App = {
       const accountText = document.getElementById("account");
       accountText.innerHTML = "Your address: " + this.account;
       await this.scan();
-      await this.loadProfile(this.account);
+      await this.showMyProfile();
     } catch (error) {
       console.error(error);
     }
@@ -127,13 +131,54 @@ const App = {
       orientation,
       bio
     ).send({ from: this.account });
-    await this.loadProfile(this.account);
+    await this.showMyProfile(this.account);
+  },
+
+  showMyProfile: async function () {
+    this.data.myAccount = await this.loadProfile(this.account);
+    if (this.data.myAccount.firstName) {
+      const myProfileElement = document.getElementById("myProfile");
+      myProfileElement.innerHTML = this.profileCardGenerator(
+        this.data.myAccount
+      );
+      const profileModalButton = document.getElementById("profileModalButton");
+      profileModalButton.innerText = "Edit Profile";
+    }
   },
 
   loadProfile: async function (_address) {
     const { getAccount } = this.profiles.methods;
     const account = await getAccount(_address).call();
-    console.log(account);
+    return {
+      firstName: account[0],
+      location: account[1],
+      birthdayYear: account[2],
+      gender: account[3],
+      orientation: account[4],
+      bio: account[5],
+      address: _address,
+    };
+  },
+
+  profileCardGenerator: function (profile) {
+    return `
+      <div class="card profile-card">
+        <div class="card-body">
+          <h5 class="card-title"><b>${profile.firstName}</b>, ${
+      2021 - profile.birthdayYear
+    } </h5>
+          <h6 class="card-subtitle mb-2 text-muted">${profile.address}</h6>
+          <p class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">${profile.location}</li>
+          <li class="list-group-item">${profile.orientation} ${
+      profile.gender
+    }</li>
+    <li class="list-group-item">${profile.bio}</li>
+        </ul>
+    </div>
+    `;
   },
 };
 

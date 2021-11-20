@@ -17,14 +17,20 @@
     button {
       margin-bottom: 12px;
     }
+    .profile-card {
+      width: 18rem;
+      margin-bottom: 12px;
+    }
   </style>
   <body>
     <h1>Chain'd</h1>
     <p id="account"></p>
 
+    <div id="myProfile"></div>
+
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      View/Update Profile
+    <button id="profileModalButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Create Profile
     </button>
 
     <!-- Modal -->
