@@ -1,5 +1,8 @@
 # chain'd
 
+![alt text](https://raw.githubusercontent.com/nch0w/chain-d/main/images/pic1.png)
+![alt text](https://raw.githubusercontent.com/nch0w/chain-d/main/images/pic2.png)
+
 ## run frontend
 
 First, install [MetaMask](https://metamask.io/).
