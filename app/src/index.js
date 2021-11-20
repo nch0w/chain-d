@@ -12,6 +12,7 @@ const App = {
 
   data: {
     myAccount: null,
+    allAccounts: {},
   },
 
   start: async function () {
@@ -38,6 +39,7 @@ const App = {
       accountText.innerHTML = "Your address: " + this.account;
       await this.scan();
       await this.showMyProfile();
+      await this.showAllAccounts();
     } catch (error) {
       console.error(error);
     }
@@ -132,6 +134,7 @@ const App = {
       bio
     ).send({ from: this.account });
     await this.showMyProfile(this.account);
+    await this.showAllAccounts();
   },
 
   showMyProfile: async function () {
@@ -143,6 +146,30 @@ const App = {
       );
       const profileModalButton = document.getElementById("profileModalButton");
       profileModalButton.innerText = "Edit Profile";
+    }
+  },
+
+  showAllAccounts: async function () {
+    await this.loadAllAccounts();
+    const allAccountsElement = document.getElementById("allAccounts");
+    const accounts = Object.keys(this.data.allAccounts);
+    console.log(accounts);
+    allAccountsElement.innerHTML = `
+    <div class="row">
+      ${accounts
+        .map((account) =>
+          this.profileCardGenerator(this.data.allAccounts[account])
+        )
+        .join("\n")}
+    </div>
+    `;
+  },
+
+  loadAllAccounts: async function () {
+    const { getAccounts } = this.profiles.methods;
+    const addresses = await getAccounts().call();
+    for (let address of addresses) {
+      this.data.allAccounts[address] = await this.loadProfile(address);
     }
   },
 
@@ -161,6 +188,7 @@ const App = {
   },
 
   profileCardGenerator: function (profile) {
+    console.log(profile);
     return `
       <div class="card profile-card">
         <div class="card-body">
@@ -168,15 +196,17 @@ const App = {
       2021 - profile.birthdayYear
     } </h5>
           <h6 class="card-subtitle mb-2 text-muted">${profile.address}</h6>
-          <p class="card-text"></p>
+          <p class="card-text">
+          ${profile.location}  · 
+          ${profile.orientation} ${profile.gender} <br />
+          <i>${profile.bio}</i>
+          </p>
+          ${
+            profile.address !== this.account
+              ? `<a href="#" class="btn btn-primary">Swipe</a>`
+              : ""
+          }
         </div>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">${profile.location}</li>
-          <li class="list-group-item">${profile.orientation} ${
-      profile.gender
-    }</li>
-    <li class="list-group-item">${profile.bio}</li>
-        </ul>
     </div>
     `;
   },
