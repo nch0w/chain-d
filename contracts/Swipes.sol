@@ -15,7 +15,7 @@ contract Swipes {
 
     function addSwipe(bytes memory encryptedMatch) public payable {
         // reject if < 1 ETH sent
-        if (msg.value < 1000000000) return;
+        if (msg.value < 100000000) return;
 
         // push sender to address list
         if (swipes[msg.sender].length == 0) {

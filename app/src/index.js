@@ -16,16 +16,15 @@ const App = {
     try {
       // get contract instance
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = swipesArtifact.networks[networkId];
 
       this.swipes = new web3.eth.Contract(
         swipesArtifact.abi,
-        deployedNetwork.address
+        swipesArtifact.networks[networkId].address
       );
 
       this.profiles = new web3.eth.Contract(
         profileArtifact.abi,
-        deployedNetwork.address
+        profileArtifact.networks[networkId].address
       );
 
       // get accounts
@@ -46,7 +45,7 @@ const App = {
     const { addSwipe } = this.swipes.methods;
     await addSwipe(this.web3.utils.asciiToHex(receiver)).send({
       from: this.account,
-      value: this.web3.utils.toWei("1", "ether"),
+      value: this.web3.utils.toWei("0.1", "ether"),
     });
     await this.scan();
   },
@@ -119,14 +118,16 @@ const App = {
     );
     const gender = document.getElementById("profile-gender").value;
     const orientation = document.getElementById("profile-orientation").value;
-    console.log(firstName, location, birthdayYear, gender, orientation);
+    const bio = document.getElementById("profile-bio").value;
     await createProfile(
       firstName,
       location,
       birthdayYear,
       gender,
-      orientation
-    ).call();
+      orientation,
+      bio
+    ).send({ from: this.account });
+    await this.loadProfile(this.account);
   },
 
   loadProfile: async function (_address) {
