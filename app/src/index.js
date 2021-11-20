@@ -189,17 +189,61 @@ const App = {
 
   showAllAccounts: async function () {
     await this.loadAllAccounts();
-    const allAccountsElement = document.getElementById("allAccounts");
-    const accounts = Object.keys(this.data.allAccounts);
-    allAccountsElement.innerHTML = `
+    const compatibleAccountsElement =
+      document.getElementById("compatibleAccounts");
+    // const compatibleAccounts = this.data.allAccounts;
+    const compatibleAccounts = this.compatibleAccounts(this.data.allAccounts);
+    compatibleAccountsElement.innerHTML = `
     <div class="row">
-      ${accounts
+      ${Object.keys(compatibleAccounts)
         .map((account) =>
-          this.profileCardGenerator(this.data.allAccounts[account])
+          this.profileCardGenerator(compatibleAccounts[account], true)
         )
         .join("\n")}
     </div>
     `;
+
+    const allAccountsElement = document.getElementById("allAccounts");
+    const allAccounts = this.data.allAccounts;
+    allAccountsElement.innerHTML = `
+    <div class="row">
+      ${Object.keys(allAccounts)
+        .map(
+          (account) => this.profileCardGenerator(allAccounts[account]),
+          false
+        )
+        .join("\n")}
+    </div>
+    `;
+  },
+
+  compatibleAccounts: function (accountsObject) {
+    let accounts = Object.values(accountsObject);
+    accounts = accounts.filter((account) => account.address !== this.account);
+    if (this.data.myAccount.gender === "Male") {
+      accounts = accounts.filter(
+        (account) =>
+          (account.orientation !== "Straight" && account.gender === "Male") ||
+          (account.orientation !== "Lesbian" && account.gender === "Female")
+      );
+      if (this.data.myAccount.orientation === "Straight") {
+        accounts = accounts.filter((account) => account.gender === "Female");
+      } else if (this.data.myAccount.orientation === "Gay") {
+        accounts = accounts.filter((account) => account.gender === "Male");
+      }
+    } else if (this.data.myAccount.gender === "Female") {
+      accounts = accounts.filter(
+        (account) =>
+          (account.orientation !== "Straight" && account.gender === "Female") ||
+          (account.orientation !== "Gay" && account.gender === "Male")
+      );
+      if (this.data.myAccount.orientation === "Straight") {
+        accounts = accounts.filter((account) => account.gender === "Male");
+      } else if (this.data.myAccount.orientation === "Lesbian") {
+        accounts = accounts.filter((account) => account.gender === "Female");
+      }
+    }
+    return accounts;
   },
 
   loadAllAccounts: async function () {
@@ -224,7 +268,7 @@ const App = {
     };
   },
 
-  profileCardGenerator: function (profile) {
+  profileCardGenerator: function (profile, showSwipe) {
     return `
       <div class="card profile-card">
         <div class="card-body">
@@ -238,7 +282,7 @@ const App = {
           <i>${profile.bio}</i>
           </p>
           ${
-            profile.address !== this.account
+            showSwipe && profile.address !== this.account
               ? `<button onclick="App.swipe('${profile.address}')" class="btn btn-primary">Swipe</a>`
               : ""
           }

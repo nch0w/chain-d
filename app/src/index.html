@@ -22,6 +22,12 @@
       margin-bottom: 12px;
       margin-right: 12px;
     }
+    #compatibleAccounts {
+      margin-left: 12px;
+    }
+    #allAccounts {
+      margin-left: 12px;
+    }
   </style>
   <body>
     <h1>Chain'd</h1>
@@ -68,8 +74,9 @@
                 <label for="profile-orientation" class="col-form-label">Sexual Orientation:</label>
                 <select class="form-select" id="profile-orientation">
                   <option value="Straight">Straight</option>
-                  <option value="Gay/Lesbian">Gay/Lesbian</option>
-                  <option value="Bisexual/Pansexual">Bisexual/Pansexual</option>
+                  <option value="Gay">Gay</option>
+                  <option value="Lesbian">Lesbian</option>
+                  <option value="Bisexual">Bisexual</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -87,7 +94,7 @@
     </div>
 
 
-
+<!-- 
     <h2>Swipe</h2>
 
     <label for="receiver">Address:</label>
@@ -100,8 +107,11 @@
 
     <button type="button" class="btn btn-secondary" onclick="App.swipe()">Swipe</button>
     <p id="swipeCounter"></p> 
-    <p id="status"></p>
+    <p id="status"></p> -->
     <script src="index.js"></script>
+
+    <h2>Compatible Accounts</h2>
+    <div id="compatibleAccounts"></div>
 
     <h2>All Accounts</h2>
     <div id="allAccounts"></div>
