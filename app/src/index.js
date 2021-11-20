@@ -4,11 +4,22 @@ import swipesArtifact from "../../build/contracts/Swipes.json";
 
 // TODO use SubtleCrypto to generate a keypair; salt swipes
 
+function buf2hex(buffer) {
+  // from https://stackoverflow.com/questions/40031688/javascript-arraybuffer-to-hex
+  return (
+    "0x" +
+    [...new Uint8Array(buffer)]
+      .map((x) => x.toString(16).toUpperCase().padStart(2, "0"))
+      .join("")
+  );
+}
+
 const App = {
   web3: null,
   account: null,
   swipes: null,
   profiles: null,
+  keyPair: null,
 
   data: {
     myAccount: null,
@@ -32,24 +43,50 @@ const App = {
         profileArtifact.networks[networkId].address
       );
 
+      // set up keypair
+      this.keyPair = await window.crypto.subtle.generateKey(
+        {
+          name: "RSA-OAEP",
+          modulusLength: 4096,
+          publicExponent: new Uint8Array([1, 0, 1]),
+          hash: "SHA-256",
+        },
+        true,
+        ["encrypt", "decrypt"]
+      );
+
       // get accounts
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
       const accountText = document.getElementById("account");
       accountText.innerHTML = "Your address: " + this.account;
-      await this.scan();
       await this.showMyProfile();
       await this.showAllAccounts();
+      await this.scan();
     } catch (error) {
       console.error(error);
     }
   },
 
-  swipe: async function () {
+  encryptAddress: async function (address) {
+    const publicKey = this.keyPair.publicKey;
+    const enc = new TextEncoder();
+    console.log(enc.encode(address));
+    const ciphertext = await window.crypto.subtle.encrypt(
+      {
+        name: "RSA-OAEP",
+      },
+      publicKey,
+      enc.encode(address)
+    );
+    return buf2hex(ciphertext);
+  },
+
+  swipe: async function (receiver) {
+    console.log(receiver);
     // const amount = parseInt(document.getElementById("amount").value);
-    const receiver = document.getElementById("receiver").value;
     const { addSwipe } = this.swipes.methods;
-    await addSwipe(this.web3.utils.asciiToHex(receiver)).send({
+    await addSwipe(await this.encryptAddress(receiver)).send({
       from: this.account,
       value: this.web3.utils.toWei("0.1", "ether"),
     });
@@ -67,7 +104,6 @@ const App = {
       const allSwipes = [];
       for (let i = 0; i < numSwipes; i++) {
         const swipe = await getSwipe(address, i).call();
-        console.log(swipe);
         allSwipes.push(swipe);
       }
       swipeInfo[address] = allSwipes;
@@ -77,20 +113,22 @@ const App = {
     scanElement.innerHTML = `
       <table class="table table-striped">
         <tr>
-          <th>Address</th>
+          <th>Account</th>
           <th>Swipes</th>
         </tr>
         ${addresses
           .map(
             (address) => `<tr>
-          <td>${address}</td>
+          <td>${this.data.allAccounts[address].firstName} (${address})</td>
           <td>
             <ol>
               ${swipeInfo[address]
                 .map(
                   (swipe) => `
                 <li>
-                  <p>🔒 ${swipe[0]}</p>
+                  <p>🔒 ${swipe[0].substring(0, 10)} ... ${swipe[0].substring(
+                    swipe[0].length - 10
+                  )}</p>
                   <p>${new Date(
                     swipe[1] * 1000
                   ).toLocaleDateString()} ${new Date(
@@ -153,7 +191,6 @@ const App = {
     await this.loadAllAccounts();
     const allAccountsElement = document.getElementById("allAccounts");
     const accounts = Object.keys(this.data.allAccounts);
-    console.log(accounts);
     allAccountsElement.innerHTML = `
     <div class="row">
       ${accounts
@@ -188,7 +225,6 @@ const App = {
   },
 
   profileCardGenerator: function (profile) {
-    console.log(profile);
     return `
       <div class="card profile-card">
         <div class="card-body">
@@ -203,7 +239,7 @@ const App = {
           </p>
           ${
             profile.address !== this.account
-              ? `<a href="#" class="btn btn-primary">Swipe</a>`
+              ? `<button onclick="App.swipe('${profile.address}')" class="btn btn-primary">Swipe</a>`
               : ""
           }
         </div>
